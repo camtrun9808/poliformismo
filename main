@@ -1,0 +1,41 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package polimorfismo;
+
+/**
+ *
+ * @author DELL
+ */
+public class Polimorfismo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+     
+   FacadeGeometria fachada = new FacadeGeometria();
+   
+   
+   Figura fig1= new Triangulo(10,20);
+   fig1.setMedida(UnidadMedida.METROS);
+   Figura fig2= new Triangulo(25,25);
+   fig2.setMedida(UnidadMedida.METROS);
+   Figura fig3= new Cuadrado(5);
+   fig3.setMedida(UnidadMedida.METROS);
+   Figura fig4= new Cuadrado(2);
+   fig4.setMedida(UnidadMedida.METROS);
+   fachada.agregarFigura(fig1);
+   fachada.agregarFigura(fig2);
+   fachada.agregarFigura(fig3);
+   fachada.agregarFigura(fig4);
+   double total=fachada.totalizarCostoFiguras();
+   double base= fachada.obtenerBaseTriangulo(fig1);
+        System.out.println(base);
+        System.out.println(total);
+    
+    }
+    
+}
