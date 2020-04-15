@@ -1,0 +1,40 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package polimorfismo;
+
+/**
+ *
+ * @author DELL
+ */
+public abstract class Figura {
+    private UnidadMedida medida;
+
+    //definicion clase abstracta
+    public abstract double calcularArea();
+
+    public double convertirMilimetros() {
+
+        if (this.medida == UnidadMedida.CENTIMETROS) {
+            return UnidadMedida.CENTIMETROS.getFactor();
+        } else {
+            if (this.medida == UnidadMedida.METROS) {
+                return UnidadMedida.METROS.getFactor();
+            } else {
+                return UnidadMedida.MIILIMETROS.getFactor();
+            }
+        }
+
+    }
+
+    public UnidadMedida getMedida() {
+        return medida;
+    }
+
+    public void setMedida(UnidadMedida medida) {
+        this.medida = medida;
+    }
+
+}
