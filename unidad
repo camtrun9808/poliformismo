@@ -1,0 +1,29 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package polimorfismo;
+
+/**
+ *
+ * @author DELL
+ */
+public enum UnidadMedida {
+    
+MIILIMETROS(1),
+CENTIMETROS(100), 
+METROS(1000);
+
+private double factor;
+
+    UnidadMedida(double factor) {
+        this.factor = factor;
+    }
+
+    public double getFactor() {
+        return factor;
+    }
+
+
+}
