@@ -1,0 +1,45 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package polimorfismo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author DELL
+ */
+public class FacadeGeometria {
+    private final double VALOR_MILIMETRO;
+    private List <Figura> figuras;
+
+    public FacadeGeometria() {
+    VALOR_MILIMETRO=1;
+    this.figuras = new ArrayList<>();
+    }
+    public boolean agregarFigura(Figura figura){
+        
+        figuras.add(figura);
+        return true;
+    }
+    
+    public double totalizarCostoFiguras(){
+        double total=0;
+        
+        for(Figura aux: figuras){
+          total+=aux.calcularArea()*VALOR_MILIMETRO; 
+        }
+        return total;
+    }
+    
+    public double obtenerBaseTriangulo(Figura f){
+      Triangulo t = null;
+        if (f instanceof Triangulo){
+         t = (Triangulo) f;
+         }
+     return t.getBase();
+    }
+}
